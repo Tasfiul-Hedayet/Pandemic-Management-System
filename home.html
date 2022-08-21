@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- <link rel="stylesheet" href="/w3css/3/w3.css"> -->
+<body>
+
+<!-- Navigation -->
+<nav class="Navigation">
+  <a href="https://ourfreedoctor.com/" class="Navigation-item">E-Doctor</a>
+  <a href="" class="Navigation-item">ICU</a>
+  <a href="" class="Navigation-item">Blood Bank</a>
+  <a href="" class="Navigation-item">Pharmacy</a>
+  <a href="https://surokkha.gov.bd/" class="Navigation-item">Vaccination</a>
+  <a href="https://www.worldometers.info/coronavirus/" class="Navigation-item">Pandemic Update</a>
+</nav><br>
+
+
+<!-- Slide Show pictues -->
+<section>
+  <img class="mySlides" src="edoctor.jpeg"
+  style="width: 1000px" height="500px">
+  <img class="mySlides" src="icu.jpg"
+  style="width: 1000px" height="500px">
+  <img class="mySlides" src="bloodbank.jpg"
+  style="width: 1000px" height="500px">
+  <img class="mySlides" src="pharma.jpeg"
+  style="width: 1000px" height="500px">
+  <img class="mySlides" src="vaccine.jpg"
+  style="width: 1000px" height="500px">
+  <img class="mySlides" src="pandemic.png"
+  style="width: 1000px" height="500px">
+</section>
+
+<!-- Website Description -->
+<section class="Container" style="max-width:600px">
+  <p class="opacity"><i>About Our System</i></p>
+  <p class="justify">Basically, this website is about managing any kind of pandemic that can happen in the world.
+    But for now due to the current Covid-19 pandemic we will be focusing on that. To manage
+    any kind of Pandemic we need some basic element. Those are mentioned below as features of
+    our project. Here, anyone can find ICU, Pharmacy, Blood Bank, Vaccine Details, E-Doctor
+     and can stay up to date about the pandemic's current situation.
+    This system interface will be user friendly and easily accessible.</p>
+</section>
+
+<script>
+
+// Automatic Slideshow - change image every 3 seconds
+
+var myIndex = 0;
+
+carousel();
+
+function carousel() 
+{
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+
+  for (i = 0; i < x.length; i++) 
+  {
+    x[i].style.display = "none";
+  }
+
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}
+  x[myIndex-1].style.display = "block";
+  setTimeout(carousel, 3000);
+}
+
+</script>
+
+</body>
+</html>
