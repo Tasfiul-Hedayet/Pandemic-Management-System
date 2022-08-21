@@ -16,13 +16,6 @@ die('Connect Error ('. mysqli_connect_errno() .') '
 else{
 $sql = "INSERT INTO userdata (username, password)
 values ('$username','$password')";
-if ($conn->query($sql)){
-echo "New record is inserted sucessfully";
-}
-else{
-echo "Error: ". $sql ."
-". $conn->error;
-}
 $conn->close();
 }
 ?>

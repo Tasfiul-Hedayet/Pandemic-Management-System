@@ -20,13 +20,6 @@ die('Connect Error ('. mysqli_connect_errno() .') '
 else{
 $sql = "INSERT INTO icu_info (hospital, address, contact, total_icu, available_icu)
 values ('$hospital','$address','$contact','$total_icu','$available_icu')";
-if ($conn->query($sql)){
-echo "New record is inserted sucessfully";
-}
-else{
-echo "Error: ". $sql ."
-". $conn->error;
-}
 $conn->close();
 }
 ?>
