@@ -20,6 +20,13 @@ die('Connect Error ('. mysqli_connect_errno() .') '
 else{
 $sql = "INSERT INTO pharmacy_info (name, area, contact, pharmacist, timing)
 values ('$name','$area','$contact','$pharmacist','$timing')";
+if ($conn->query($sql)){
+    echo "Data Inserted Successfully";
+    }
+    else{
+    echo "Error: ". $sql ."
+    ". $conn->error;
+    }
 $conn->close();
 }
 ?>

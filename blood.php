@@ -20,6 +20,13 @@ die('Connect Error ('. mysqli_connect_errno() .') '
 else{
 $sql = "INSERT INTO blood_bank (bg, name, contact, address, status)
 values ('$bg','$name','$contact','$address','$status')";
+if ($conn->query($sql)){
+    echo "Data Inserted Successfully";
+    }
+    else{
+    echo "Error: ". $sql ."
+    ". $conn->error;
+    }
 $conn->close();
 }
 ?>

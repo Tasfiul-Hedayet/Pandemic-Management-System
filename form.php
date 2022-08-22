@@ -16,7 +16,13 @@ die('Connect Error ('. mysqli_connect_errno() .') '
 else{
 $sql = "INSERT INTO userdata (username, password)
 values ('$username','$password')";
-echo "$username". "<br>"."$password";
+if ($conn->query($sql)){
+    echo "Login Successfully";
+    }
+    else{
+    echo "Error: ". $sql ."
+    ". $conn->error;
+    }
 $conn->close();
 }
 ?>
