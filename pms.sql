@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 21, 2022 at 09:04 PM
+-- Generation Time: Aug 22, 2022 at 11:33 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -24,6 +24,48 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `blood_bank`
+--
+
+CREATE TABLE `blood_bank` (
+  `bg` enum('A+','A-','B+','B-','AB+','AB-','O+','O-') NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `contact` bigint(20) NOT NULL,
+  `address` varchar(30) NOT NULL,
+  `status` enum('Available','Unavailable') NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `icu_info`
+--
+
+CREATE TABLE `icu_info` (
+  `hospital` varchar(100) NOT NULL,
+  `address` varchar(100) NOT NULL,
+  `contact` bigint(20) NOT NULL,
+  `total_icu` int(7) NOT NULL,
+  `available_icu` int(5) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pharmacy_info`
+--
+
+CREATE TABLE `pharmacy_info` (
+  `name` varchar(30) NOT NULL,
+  `area` varchar(50) NOT NULL,
+  `contact` bigint(20) NOT NULL,
+  `pharmacist` varchar(30) NOT NULL,
+  `timing` enum('24/7','9AM-12PM') NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `userdata`
 --
 
@@ -33,20 +75,14 @@ CREATE TABLE `userdata` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `userdata`
+-- Indexes for dumped tables
 --
 
-INSERT INTO `userdata` (`username`, `password`) VALUES
-('abiranjumprottoy2000@gmail.com', 'dsad'),
-('abiranjumprottoy2000@gmail.com', 'dasssssssss'),
-('abiranjumprottoy2000@gmail.com', 'sdaaaaaaaaa'),
-('b.inod.mcbc420@gmail.com', 'dsaaaaaaaaa'),
-('t.h@gmail.com', 'suya por'),
-('t.h@gmail.com', 'suya por'),
-('abiranjumprottoy2000@gmail.com', 'gafasd'),
-('dsadasd', 'dasdasd'),
-('abiranjumprottoy2000@gmail.com', 'dasdasd'),
-('abir_prottoy', 'sdad');
+--
+-- Indexes for table `icu_info`
+--
+ALTER TABLE `icu_info`
+  ADD PRIMARY KEY (`contact`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
